@@ -4,7 +4,7 @@ import Button from "../../common/button";
 
 const HeroSection = () => {
   return (
-    <Section id="hero" className="bg-[#f3f4f6] dark:bg-[#181818]">
+    <Section id="hero">
       <div>HeroSection</div>
     </Section>
   );

@@ -1,24 +1,33 @@
 import { Github, Twitter, Figma } from "lucide-react";
 
-import LogoCypress from "/public/assets/svg/logos/icon-cypress.svg";
-import LogoCypressLight from "/public/assets/svg/logos/icon-cypress-light.svg";
-import LogoExpress from "/public/assets/svg/logos/icon-express.svg";
-import LogoExpressLight from "/public/assets/svg/logos/icon-express-light.svg";
-import LogoFigma from "/public/assets/svg/logos/icon-figma.svg";
-import LogoGit from "/public/assets/svg/logos/icon-git.svg";
-import LogoJavascript from "/public/assets/svg/logos/icon-javascript.svg";
-import LogoMongoDB from "/public/assets/svg/logos/icon-mongodb.svg";
-import LogoNest from "/public/assets/svg/logos/icon-nest.svg";
-import LogoNextjs from "/public/assets/svg/logos/icon-nextjs.svg";
-import LogoNodejs from "/public/assets/svg/logos/icon-nodejs.svg";
-import LogoPostgreSQL from "/public/assets/svg/logos/icon-postgresql.svg";
-import LogoReact from "/public/assets/svg/logos/icon-react.svg";
-import LogoSass from "/public/assets/svg/logos/icon-sass.svg";
-import LogoSocket from "/public/assets/svg/logos/icon-socket.svg";
-import LogoSocketLight from "/public/assets/svg/logos/icon-socket-light.svg";
-import LogoStorybook from "/public/assets/svg/logos/icon-storybook.svg";
-import LogoTailwindcss from "/public/assets/svg/logos/icon-tailwindcss.svg";
-import LogoTypescript from "/public/assets/svg/logos/icon-typescript.svg";
+import LogoCSS from "/public/assets/images/logos/icon-css.svg";
+import LogoCSSLight from "/public/assets/images/logos/icon-css-light.svg";
+import LogoCypress from "/public/assets/images/logos/icon-cypress.svg";
+import LogoCypressLight from "/public/assets/images/logos/icon-cypress-light.svg";
+import LogoExpress from "/public/assets/images/logos/icon-express.svg";
+import LogoExpressLight from "/public/assets/images/logos/icon-express-light.svg";
+import LogoHTML from "/public/assets/images/logos/icon-html.svg";
+import LogoHTMLLight from "/public/assets/images/logos/icon-html-light.svg";
+import LogoFigma from "/public/assets/images/logos/icon-figma.svg";
+import LogoGit from "/public/assets/images/logos/icon-git.svg";
+import LogoJavascript from "/public/assets/images/logos/icon-javascript.svg";
+import LogoMongoDB from "/public/assets/images/logos/icon-mongodb.svg";
+import LogoNest from "/public/assets/images/logos/icon-nest.svg";
+import LogoNextjs from "/public/assets/images/logos/icon-nextjs.svg";
+import LogoNodejs from "/public/assets/images/logos/icon-nodejs.svg";
+import LogoPostgreSQL from "/public/assets/images/logos/icon-postgresql.svg";
+import LogoReact from "/public/assets/images/logos/icon-react.svg";
+import LogoReactPDF from "/public/assets/images/logos/icon-react-pdf.png";
+import LogoReactTestingLibrary from "/public/assets/images/logos/icon-react-testing-library.png";
+import LogoSass from "/public/assets/images/logos/icon-sass.svg";
+import LogoSocket from "/public/assets/images/logos/icon-socket.svg";
+import LogoSocketLight from "/public/assets/images/logos/icon-socket-light.svg";
+import LogoStorybook from "/public/assets/images/logos/icon-storybook.svg";
+import LogoStyledComponents from "/public/assets/images/logos/icon-styled-components.png";
+import LogoTailwindcss from "/public/assets/images/logos/icon-tailwindcss.svg";
+import LogoTypescript from "/public/assets/images/logos/icon-typescript.svg";
+
+import { TechnologyDetails } from "./types";
 
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -33,101 +42,118 @@ export const EXTERNAL_LINKS = {
   LINKEDIN: ""
 };
 
-// export const TECHNOLOGIES: TechDetails[] = [
-//   {
-//     label: "Javascript",
-//     logo: LogoJavascript,
-//     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-//   },
-//   {
-//     label: "Typescript",
-//     logo: LogoTypescript,
-//     url: "https://www.typescriptlang.org/"
-//   },
-//   {
-//     label: "React",
-//     logo: LogoReact,
-//     url: "https://react.dev/"
-//   },
-//   {
-//     label: "Next.js",
-//     logo: LogoNextjs,
-//     url: "https://nextjs.org/"
-//   },
-//   {
-//     label: "Node.js",
-//     logo: LogoNodejs,
-//     url: "https://nodejs.org/en"
-//   },
-//   {
-//     label: "Express.js",
-//     logo: LogoExpress,
-//     darkModeLogo: LogoExpressLight,
-//     url: "https://expressjs.com/"
-//   },
-//   // {
-//   //   label: "Nest.js",
-//   //   logo: LogoNest,
-//   //   url: "https://nestjs.com/"
-//   // },
-//   // {
-//   //   label: "Socket.io",
-//   //   logo: LogoSocket,
-//   //   darkModeLogo: LogoSocketLight,
-//   //   url: "https://socket.io/"
-//   // },
-//   {
-//     label: "PostgreSQL",
-//     logo: LogoPostgreSQL,
-//     url: "https://www.postgresql.org/"
-//   },
-//   // {
-//   //   label: "MongoDB",
-//   //   logo: LogoMongoDB,
-//   //   url: "https://www.mongodb.com/"
-//   // },
-//   {
-//     label: "Sass/Scss",
-//     logo: LogoSass,
-//     url: "https://sass-lang.com/"
-//   },
-//   {
-//     label: "Tailwindcss",
-//     logo: LogoTailwindcss,
-//     url: "https://tailwindcss.com/"
-//   },
-//   {
-//     label: "Figma",
-//     logo: LogoFigma,
-//     url: "https://www.figma.com/"
-//   },
-//   // {
-//   //   label: "Cypress",
-//   //   logo: LogoCypress,
-//   //   darkModeLogo: LogoCypressLight,
-//   //   url: "https://www.cypress.io/"
-//   // },
-//   {
-//     label: "Storybook",
-//     logo: LogoStorybook,
-//     url: "https://storybook.js.org/"
-//   },
-//   {
-//     label: "Git",
-//     logo: LogoGit,
-//     url: "https://git-scm.com/"
-//   },
-//   {
-//     label: "React PDF",
-//     logo: "",
-//     url: "https://react-pdf.org/"
-//   },
-//   {
-//     label: "React Testing Library",
-//     logo: "",
-//     url: "https://testing-library.com/"
-//   }
-// ];
+export const TECHNOLOGIES: TechnologyDetails[] = [
+  {
+    label: "HTML",
+    logo: LogoHTML,
+    darkModeLogo: LogoHTMLLight,
+    url: "https://html.spec.whatwg.org/"
+  },
+  {
+    label: "CSS",
+    logo: LogoCSS,
+    darkModeLogo: LogoCSSLight,
+    url: "https://www.w3.org/Style/CSS/Overview.en.html"
+  },
+  {
+    label: "Javascript",
+    logo: LogoJavascript,
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+    label: "Typescript",
+    logo: LogoTypescript,
+    url: "https://www.typescriptlang.org/"
+  },
+  {
+    label: "React",
+    logo: LogoReact,
+    url: "https://react.dev/"
+  },
+  {
+    label: "Next.js",
+    logo: LogoNextjs,
+    url: "https://nextjs.org/"
+  },
+  {
+    label: "Node.js",
+    logo: LogoNodejs,
+    url: "https://nodejs.org/en"
+  },
+  {
+    label: "Express.js",
+    logo: LogoExpress,
+    darkModeLogo: LogoExpressLight,
+    url: "https://expressjs.com/"
+  },
+  // {
+  //   label: "Nest.js",
+  //   logo: LogoNest,
+  //   url: "https://nestjs.com/"
+  // },
+  // {
+  //   label: "Socket.io",
+  //   logo: LogoSocket,
+  //   darkModeLogo: LogoSocketLight,
+  //   url: "https://socket.io/"
+  // },
+  {
+    label: "PostgreSQL",
+    logo: LogoPostgreSQL,
+    url: "https://www.postgresql.org/"
+  },
+  // {
+  //   label: "MongoDB",
+  //   logo: LogoMongoDB,
+  //   url: "https://www.mongodb.com/"
+  // },
+  // {
+  //   label: "Sass/Scss",
+  //   logo: LogoSass,
+  //   url: "https://sass-lang.com/"
+  // },
+  {
+    label: "Tailwind CSS",
+    logo: LogoTailwindcss,
+    url: "https://tailwindcss.com/"
+  },
+  {
+    label: "styled components",
+    logo: LogoStyledComponents,
+    url: "https://styled-components.com/"
+  },
+  {
+    label: "Figma",
+    logo: LogoFigma,
+    url: "https://www.figma.com/"
+  },
+  // {
+  //   label: "Cypress",
+  //   logo: LogoCypress,
+  //   darkModeLogo: LogoCypressLight,
+  //   url: "https://www.cypress.io/"
+  // },
+  // {
+  //   label: "Storybook",
+  //   logo: LogoStorybook,
+  //   url: "https://storybook.js.org/"
+  // },
+  {
+    label: "Git",
+    logo: LogoGit,
+    url: "https://git-scm.com/"
+  },
+  {
+    label: "React PDF",
+    logo: LogoReactPDF,
+    url: "https://react-pdf.org/"
+  },
+  {
+    label: "React Testing Library",
+    logo: LogoReactTestingLibrary,
+    url: "https://testing-library.com/"
+  }
+];
 
 // export const EXPERIENCES: ExperienceDetails[] = [
 //   {
