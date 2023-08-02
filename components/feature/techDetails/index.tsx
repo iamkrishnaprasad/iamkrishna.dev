@@ -17,7 +17,9 @@ const TechDetails = ({ logo, darkModeLogo, label, url }: TechnologyDetails) => {
           />
         </div>
       </Link>
-      <Typography variant="body1">{label}</Typography>
+      <Typography variant="body1" className="text-center">
+        {label}
+      </Typography>
     </div>
   );
 };
