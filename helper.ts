@@ -55,7 +55,7 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
     label: "CSS",
     logo: LogoCSS,
     darkModeLogo: LogoCSSLight,
-    url: "https://www.w3.org/Style/CSS/Overview.en.html"
+    url: "https://www.w3.org/Style/CSS/"
   },
   {
     label: "Javascript",
@@ -80,7 +80,7 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
   {
     label: "Node.js",
     logo: LogoNodeJS,
-    url: "https://nodejs.org/en"
+    url: "https://nodejs.org/"
   },
   {
     label: "Express.js",

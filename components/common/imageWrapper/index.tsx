@@ -19,7 +19,17 @@ const ImageWrapper = ({ src, srcForDarkMode, alt, ...props }: ImageWrapperProps)
 
   const imageSrc = theme === "dark" ? srcForDarkMode || src : src;
 
-  return <Image src={imageSrc!} alt={alt} {...props} />;
+  return (
+    <Image
+      src={imageSrc!}
+      alt={alt}
+      {...props}
+      loading="lazy"
+      layout="responsive"
+      placeholder="blur"
+      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8Uw8AAh0BTZud3BwAAAAASUVORK5CYII="
+    />
+  );
 };
 
 export default ImageWrapper;
