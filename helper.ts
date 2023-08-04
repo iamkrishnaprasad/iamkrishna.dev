@@ -4,21 +4,22 @@ import LogoCSS from "/public/assets/images/logos/icon-css.svg";
 import LogoCSSLight from "/public/assets/images/logos/icon-css-light.svg";
 import LogoCypress from "/public/assets/images/logos/icon-cypress.svg";
 import LogoCypressLight from "/public/assets/images/logos/icon-cypress-light.svg";
-import LogoExpress from "/public/assets/images/logos/icon-express.svg";
-import LogoExpressLight from "/public/assets/images/logos/icon-express-light.svg";
+import LogoExpressJS from "/public/assets/images/logos/icon-express-js.svg";
+import LogoExpressJSLight from "/public/assets/images/logos/icon-express-js-light.svg";
 import LogoHTML from "/public/assets/images/logos/icon-html.svg";
 import LogoHTMLLight from "/public/assets/images/logos/icon-html-light.svg";
 import LogoFigma from "/public/assets/images/logos/icon-figma.svg";
 import LogoGit from "/public/assets/images/logos/icon-git.svg";
 import LogoJavascript from "/public/assets/images/logos/icon-javascript.svg";
+import LogoMUI from "/public/assets/images/logos/icon-mui.svg";
 import LogoMongoDB from "/public/assets/images/logos/icon-mongodb.svg";
 import LogoNest from "/public/assets/images/logos/icon-nest.svg";
-import LogoNextjs from "/public/assets/images/logos/icon-nextjs.svg";
-import LogoNodejs from "/public/assets/images/logos/icon-nodejs.svg";
+import LogoNextJS from "/public/assets/images/logos/icon-next-js.svg";
+import LogoNodeJS from "/public/assets/images/logos/icon-node-js.svg";
 import LogoPostgreSQL from "/public/assets/images/logos/icon-postgresql.svg";
 import LogoReact from "/public/assets/images/logos/icon-react.svg";
 import LogoReactPDF from "/public/assets/images/logos/icon-react-pdf.png";
-import LogoReactTestingLibrary from "/public/assets/images/logos/icon-react-testing-library.png";
+import LogoReactTestingLibrary from "/public/assets/images/logos/icon-react-testing-library.svg";
 import LogoSass from "/public/assets/images/logos/icon-sass.svg";
 import LogoSocket from "/public/assets/images/logos/icon-socket.svg";
 import LogoSocketLight from "/public/assets/images/logos/icon-socket-light.svg";
@@ -72,18 +73,18 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
   },
   {
     label: "Next.js",
-    logo: LogoNextjs,
+    logo: LogoNextJS,
     url: "https://nextjs.org/"
   },
   {
     label: "Node.js",
-    logo: LogoNodejs,
+    logo: LogoNodeJS,
     url: "https://nodejs.org/en"
   },
   {
     label: "Express.js",
-    logo: LogoExpress,
-    darkModeLogo: LogoExpressLight,
+    logo: LogoExpressJS,
+    darkModeLogo: LogoExpressJSLight,
     url: "https://expressjs.com/"
   },
   // {
@@ -123,6 +124,11 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
     url: "https://styled-components.com/"
   },
   {
+    label: "Material UI",
+    logo: LogoMUI,
+    url: "https://mui.com/"
+  },
+  {
     label: "Figma",
     logo: LogoFigma,
     url: "https://www.figma.com/"
@@ -151,7 +157,7 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
   {
     label: "React Testing Library",
     logo: LogoReactTestingLibrary,
-    url: "https://testing-library.com/"
+    url: "https://testing-library.com/docs/react-testing-library/intro/"
   }
 ];
 

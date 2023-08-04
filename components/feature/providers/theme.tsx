@@ -15,7 +15,11 @@ const ThemeProvider = ({ children }: ProvidersProps) => {
     return <>{children}</>;
   }
 
-  return <NextJSThemeProvider attribute="class">{children}</NextJSThemeProvider>;
+  return (
+    <NextJSThemeProvider attribute="class" enableSystem={false} defaultTheme="light">
+      {children}
+    </NextJSThemeProvider>
+  );
 };
 
 export default ThemeProvider;
