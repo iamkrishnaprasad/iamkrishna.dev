@@ -11,6 +11,7 @@ import LogoHTMLLight from "/public/assets/images/logos/icon-html-light.svg";
 import LogoFigma from "/public/assets/images/logos/icon-figma.svg";
 import LogoGit from "/public/assets/images/logos/icon-git.svg";
 import LogoJavascript from "/public/assets/images/logos/icon-javascript.svg";
+import LogoJest from "/public/assets/images/logos/icon-jest.svg";
 import LogoMUI from "/public/assets/images/logos/icon-mui.svg";
 import LogoMongoDB from "/public/assets/images/logos/icon-mongodb.svg";
 import LogoNest from "/public/assets/images/logos/icon-nest.svg";
@@ -153,6 +154,11 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
     label: "React PDF",
     logo: LogoReactPDF,
     url: "https://react-pdf.org/"
+  },
+  {
+    label: "Jest",
+    logo: LogoJest,
+    url: "https://jestjs.io/"
   },
   {
     label: "React Testing Library",
