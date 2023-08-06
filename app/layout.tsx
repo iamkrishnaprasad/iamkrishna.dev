@@ -44,7 +44,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </Script>
         </head>
       ) : null}
-      <body className={`${inter.className} no-scrollbar overflow-y-scroll`}>
+      <body className={`${inter.className} no-scrollbar overflow-y-scroll antialiased`}>
         <Providers>
           <Header />
           <main>{children}</main>

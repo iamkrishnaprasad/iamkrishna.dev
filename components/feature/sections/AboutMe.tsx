@@ -1,5 +1,5 @@
+import Section from "@/components/common/section";
 import React from "react";
-import Section from "../../common/section";
 
 const AboutMeSection = () => {
   return (

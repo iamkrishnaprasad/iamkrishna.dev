@@ -1,7 +1,7 @@
-import React from "react";
-import Section from "../../common/section";
+import Section from "@/components/common/section";
 import Typography from "@/components/common/typography";
 import { TECHNOLOGIES } from "@/helper";
+import React from "react";
 import TechDetails from "../techDetails";
 
 const SkillsSection = () => {

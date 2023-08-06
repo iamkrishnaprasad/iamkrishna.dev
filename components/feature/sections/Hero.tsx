@@ -1,6 +1,5 @@
+import Section from "@/components/common/section";
 import React from "react";
-import Section from "../../common/section";
-import Button from "../../common/button";
 
 const HeroSection = () => {
   return (
