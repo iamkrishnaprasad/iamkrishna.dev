@@ -21,6 +21,7 @@ import LogoPostgreSQL from "/public/assets/images/logos/icon-postgresql.svg";
 import LogoReact from "/public/assets/images/logos/icon-react.svg";
 import LogoReactPDF from "/public/assets/images/logos/icon-react-pdf.png";
 import LogoReactTestingLibrary from "/public/assets/images/logos/icon-react-testing-library.svg";
+import LogoRedis from "/public/assets/images/logos/icon-redis.svg";
 import LogoSass from "/public/assets/images/logos/icon-sass.svg";
 import LogoSocket from "/public/assets/images/logos/icon-socket.svg";
 import LogoSocketLight from "/public/assets/images/logos/icon-socket-light.svg";
@@ -104,6 +105,11 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
     label: "PostgreSQL",
     logo: LogoPostgreSQL,
     url: "https://www.postgresql.org/"
+  },
+  {
+    label: "Redis",
+    logo: LogoRedis,
+    url: "https://redis.io/"
   },
   // {
   //   label: "MongoDB",
