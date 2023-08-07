@@ -4,9 +4,9 @@ import { TECHNOLOGIES } from "@/helper";
 import React from "react";
 import TechDetails from "../techDetails";
 
-const SkillsSection = () => {
+const SkillsContent = () => {
   return (
-    <Section id="skills">
+    <>
       <div className="flex flex-col items-center gap-4">
         <div className="self-center">
           <Typography variant="body1" className="font-medium">
@@ -23,8 +23,8 @@ const SkillsSection = () => {
           <TechDetails {...technology} key={technology.label} />
         ))}
       </div>
-    </Section>
+    </>
   );
 };
 
-export default SkillsSection;
+export default SkillsContent;

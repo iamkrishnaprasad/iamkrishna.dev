@@ -6,6 +6,7 @@ import { SECTIONS_AND_NAV_LINKS } from "@/helper";
 import Link from "@/components/common/link";
 import IconButton from "@/components/common/iconButton";
 import { Menu, X } from "lucide-react";
+import { Section } from "@/types";
 
 const MobileNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,13 +33,17 @@ const MobileNavigation = () => {
       {isOpen ? (
         <div className="absolute left-0 top-[68px] flex w-full items-center border-y border-gray-100 bg-white py-3 dark:bg-[#121212] md:hidden">
           <ul className="flex list-none flex-col items-start gap-3 px-4">
-            {SECTIONS_AND_NAV_LINKS.map((link) => (
-              <li key={link.label}>
-                <Link onClick={() => handleClick()} href={`#${link.id}`}>
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {SECTIONS_AND_NAV_LINKS?.filter(
+              (section: Section) => Boolean(section?.isInActive) === false
+            )
+              ?.filter((section: Section) => Boolean(section?.hideNav) === false)
+              ?.map((link) => (
+                <li key={link.label}>
+                  <Link onClick={() => handleClick()} href={`#${link.id}`}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </div>
       ) : null}

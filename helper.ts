@@ -32,11 +32,12 @@ import LogoTypescript from "/public/assets/images/logos/icon-typescript.svg";
 import { TechnologyDetails } from "./types";
 
 export const SECTIONS_AND_NAV_LINKS = [
+  { label: "Home", id: "hero", hideNav: true, isInActive: false },
   { label: "About", id: "about" },
   { label: "Skills", id: "skills" },
   { label: "Experiences", id: "experiences" },
   { label: "Projects", id: "projects" },
-  { label: "Contact", id: "contact" }
+  { label: "Contact Me", id: "contactMe" }
 ];
 
 export const EXTERNAL_LINKS = {

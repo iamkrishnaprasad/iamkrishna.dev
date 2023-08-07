@@ -1,16 +1,19 @@
 import { mergeClasses } from "@/utils";
 import React from "react";
 
-interface ISection extends React.HTMLAttributes<HTMLElement> {}
+interface ISection extends React.HTMLAttributes<HTMLElement> {
+  isAlternative?: boolean;
+}
 
 const Section = React.forwardRef<HTMLElement, ISection>(
-  ({ className, children, ...props }: ISection, ref) => {
+  ({ className, children, isAlternative = false, ...props }: ISection, ref) => {
     return (
       <section
         {...props}
         ref={ref}
         className={mergeClasses(
           "landscape:section-min-height portrait:section-min-height w-full scroll-mt-[68px] py-16 md:py-20 xl:py-24",
+          isAlternative && "bg-[#f3f4f6] dark:bg-[#181818]",
           className
         )}
       >
