@@ -1,15 +1,15 @@
 import React from "react";
 import ThemeSwitcher from "../themeSwitcher";
-import { NAV_LINKS } from "@/helper";
+import { SECTIONS_AND_NAV_LINKS } from "@/helper";
 import Link from "@/components/common/link";
 
 const DesktopNavigation = () => {
   return (
     <div className="hidden items-center gap-6 md:flex">
       <ul className="flex list-none items-center gap-6">
-        {NAV_LINKS.map((link) => (
+        {SECTIONS_AND_NAV_LINKS.map((link) => (
           <li key={link.label}>
-            <Link href={link.href}>{link.label}</Link>
+            <Link href={`#${link.id}`}>{link.label}</Link>
           </li>
         ))}
       </ul>

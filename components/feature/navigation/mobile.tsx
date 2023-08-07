@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import ThemeSwitcher from "../themeSwitcher";
-import { NAV_LINKS } from "@/helper";
+import { SECTIONS_AND_NAV_LINKS } from "@/helper";
 import Link from "@/components/common/link";
 import IconButton from "@/components/common/iconButton";
 import { Menu, X } from "lucide-react";
@@ -32,9 +32,9 @@ const MobileNavigation = () => {
       {isOpen ? (
         <div className="absolute left-0 top-[68px] flex w-full items-center border-y border-gray-100 bg-white py-3 dark:bg-[#121212] md:hidden">
           <ul className="flex list-none flex-col items-start gap-3 px-4">
-            {NAV_LINKS.map((link) => (
+            {SECTIONS_AND_NAV_LINKS.map((link) => (
               <li key={link.label}>
-                <Link onClick={() => handleClick()} href={link.href}>
+                <Link onClick={() => handleClick()} href={`#${link.id}`}>
                   {link.label}
                 </Link>
               </li>

@@ -31,12 +31,12 @@ import LogoTypescript from "/public/assets/images/logos/icon-typescript.svg";
 
 import { TechnologyDetails } from "./types";
 
-export const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experiences", href: "#experiences" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" }
+export const SECTIONS_AND_NAV_LINKS = [
+  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Experiences", id: "experiences" },
+  { label: "Projects", id: "projects" },
+  { label: "Contact", id: "contact" }
 ];
 
 export const EXTERNAL_LINKS = {
