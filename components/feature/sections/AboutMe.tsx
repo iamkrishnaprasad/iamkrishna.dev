@@ -1,5 +1,11 @@
+import SectionHeading from "../sectionHeading";
+
 const AboutMeContent = () => {
-  return <div>AboutMeSection</div>;
+  return (
+    <>
+      <SectionHeading title="About Me" subtitle="My introduction" />
+    </>
+  );
 };
 
 export default AboutMeContent;

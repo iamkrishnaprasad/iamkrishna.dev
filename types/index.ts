@@ -17,3 +17,29 @@ export type TechnologyDetails = {
   label: string;
   url: string;
 };
+
+export type ExperienceType = "work" | "education";
+
+type ExperienceDetails = {
+  type: ExperienceType;
+  name: string;
+  logo: string | StaticImageData;
+  url?: string;
+  startDate: Date;
+  endDate?: Date;
+  summary?: string[];
+};
+
+export interface IWorkDetails extends ExperienceDetails {
+  type: "work";
+  position: string;
+  isCurrentlyWorkHere?: boolean;
+}
+
+export interface IEducationDetails extends ExperienceDetails {
+  type: "education";
+  degree: string;
+  areaOfStudy?: string;
+  grade?: string;
+  isCurrentlyStudyingHere?: boolean;
+}

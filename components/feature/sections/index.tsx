@@ -1,7 +1,7 @@
 import HeroContent from "./Hero";
 import AboutMeContent from "./AboutMe";
 import SkillsContent from "./Skills";
-import ExperiencesContent from "./Experiences";
+import ExperiencesContent from "./experiences";
 import ProjectsContent from "./Projects";
 import ContactMeContent from "./ContactMe";
 import { SECTIONS_AND_NAV_LINKS } from "@/helper";

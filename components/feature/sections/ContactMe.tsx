@@ -1,5 +1,11 @@
+import SectionHeading from "../sectionHeading";
+
 const ContactMeContent = () => {
-  return <div>ContactMeSection</div>;
+  return (
+    <>
+      <SectionHeading title="Contact Me" />
+    </>
+  );
 };
 
 export default ContactMeContent;

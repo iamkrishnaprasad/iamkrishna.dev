@@ -1,5 +1,3 @@
-import { Github, Twitter, Figma } from "lucide-react";
-
 import LogoCSS from "/public/assets/images/logos/icon-css.svg";
 import LogoCSSLight from "/public/assets/images/logos/icon-css-light.svg";
 import LogoCypress from "/public/assets/images/logos/icon-cypress.svg";
@@ -30,7 +28,13 @@ import LogoStyledComponents from "/public/assets/images/logos/icon-styled-compon
 import LogoTailwindcss from "/public/assets/images/logos/icon-tailwindcss.svg";
 import LogoTypescript from "/public/assets/images/logos/icon-typescript.svg";
 
-import { TechnologyDetails } from "./types";
+import LogoBigon from "public/assets/images/organizations/logo-bigon.png";
+import LogoTelus from "public/assets/images/organizations/logo-telus.svg";
+import LogoFork from "public/assets/images/organizations/logo-fork.png";
+import LogoRenaissance from "public/assets/images/organizations/logo-renaissance.jpg";
+import LogoSMVIT from "public/assets/images/institutes/logo-smvit.png";
+
+import { IEducationDetails, IWorkDetails, TechnologyDetails } from "./types";
 
 export const SECTIONS_AND_NAV_LINKS = [
   { label: "Home", id: "hero", hideNav: true, isInActive: false },
@@ -171,6 +175,74 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
     label: "React Testing Library",
     logo: LogoReactTestingLibrary,
     url: "https://testing-library.com/docs/react-testing-library/intro/"
+  }
+];
+
+export const EXPERIENCES: (IWorkDetails | IEducationDetails)[] = [
+  {
+    type: "work",
+    name: "Bigon IT Consulting Pvt. Ltd.",
+    logo: LogoBigon,
+    url: "",
+    position: "Software Engineer",
+    isCurrentlyWorkHere: true,
+    startDate: new Date(2022, 4),
+    summary: ["Working as Consulting Software Engineer for Telus."]
+  },
+  {
+    type: "work",
+    name: "Telus",
+    logo: LogoTelus,
+    url: "",
+    position: "Software Engineer (Consultant)",
+    isCurrentlyWorkHere: true,
+    startDate: new Date(2021, 6),
+    summary: [
+      "Worked on 'CASA Spring' - Project for Telus Digital.",
+      "Worked on 'Multi Benefits Claim Management (MBCM)' - Project for Telus Health.",
+      "Delivered performance-driven and user-centric websites that met all business requirements.",
+      "Contributed ideas and suggestions in team meetings and delivered updates on deadlines, designs and enhancements.",
+      "Participated in requirements gathering to solidify prerequisites and determine best technical solution to meet business needs.",
+      "Developed unit test cases for testing.",
+      "Worked with a variety of technologies, including ReactJS, React Testing Library, Typescript, NodeJS, Express.js, styled components, Material UI, Redis, Redux, Figma, Storybook."
+    ]
+  },
+  {
+    type: "work",
+    name: "Fork Technologies Pvt. Ltd.",
+    logo: LogoFork,
+    url: "",
+    position: "Software Engineer",
+    startDate: new Date(2021, 4),
+    endDate: new Date(2022, 3),
+    summary: ["Worked as Consulting Software Engineer for Telus."]
+  },
+  {
+    type: "work",
+    name: "Renaissance Technologies Pvt. Ltd.",
+    logo: LogoRenaissance,
+    url: "",
+    startDate: new Date(2019, 3),
+    endDate: new Date(2021, 3),
+    position: "Associate Software Engineer",
+    summary: [
+      "Built graphical dashboard for Toyota to track their day-to-day web leads.",
+      "Integrated Google maps API & Google analytics in Toyota website to render dealer's network & track website statistics.",
+      "Adhered to SEO best practices while designing sites.",
+      "Engaged with clients to plan and optimize site issues and queries.",
+      "Built and styled new mobile-friendly websites, transitioning legacy presentations to simultaneous easy-to-use versions.",
+      "Provided security maintenance and patching on website interface to maintain viability after launch.",
+      "Worked with a variety of technologies, including HTML, CSS, Bootstrap, JavaScript, jQuery, ReactJS, HighCharts, MS SQL Server and Web API to develop web-application solutions."
+    ]
+  },
+  {
+    type: "education",
+    name: "Sir M. Visvesvaraya Institute of Technology",
+    logo: LogoSMVIT,
+    url: "https://www.sirmvit.edu/",
+    startDate: new Date(2014, 5),
+    endDate: new Date(2017, 6),
+    degree: "Masters in Computer Application (MCA)"
   }
 ];
 
