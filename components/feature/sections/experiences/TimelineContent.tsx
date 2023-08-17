@@ -104,7 +104,7 @@ const renderContent = (data: IWorkDetails | IEducationDetails) => {
 
 const TimelineContent = (data: IWorkDetails | IEducationDetails) => {
   return (
-    <div className="flex gap-6 rounded-md bg-white p-6 text-black shadow-md">
+    <div className="flex flex-col gap-6 rounded-md bg-white p-6 text-black shadow-md lg:flex-row">
       {renderContent(data)}
     </div>
   );
