@@ -8,17 +8,16 @@ const HeroContent = () => {
   return (
     <div className="flex h-full flex-col md:flex-row">
       <div className="order-2 flex h-2/3 w-full flex-col md:relative md:order-1 md:h-full md:w-1/2">
-        <div className="flex h-full flex-col items-center justify-center md:absolute md:left-0 md:right-0 ">
+        <div className="flex h-full flex-col items-center justify-center gap-3 md:absolute md:left-0 md:right-0 ">
           <Typography variant="h3" className={`text-gray-600`}>
             Hello, i&#39;m
           </Typography>
-          <Typography variant="h2" className="py-3 text-gray-900">
+          <Typography variant="h2" className="text-gray-900">
             Krishnaprasad M.
           </Typography>
           <Typography variant="h3" className="text-gray-600">
             Fullstack Developer
           </Typography>
-          {/* <span>Malappuram, Kerala</span> */}
           <DownloadCV />
         </div>
         <div className="flex h-[20%] items-center justify-center gap-9 md:absolute md:bottom-0 md:left-0 md:right-0">
