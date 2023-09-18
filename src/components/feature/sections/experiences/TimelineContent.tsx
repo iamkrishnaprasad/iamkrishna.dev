@@ -1,6 +1,6 @@
 import ImageWrapper from "@/components/common/imageWrapper";
 import Typography from "@/components/common/typography";
-import { IEducationDetails, IWorkDetails } from "@/types";
+import { EducationDetails, WorkDetails } from "@/types";
 import React from "react";
 
 const dateFormatOptions: Intl.DateTimeFormatOptions = {
@@ -16,7 +16,7 @@ const WorkDetailsContent = ({
   endDate,
   isCurrentlyWorkHere = false,
   summary
-}: IWorkDetails) => {
+}: WorkDetails) => {
   return (
     <>
       <div className="w-32">
@@ -64,7 +64,7 @@ const EducationDetailsContent = ({
   startDate,
   endDate,
   isCurrentlyStudyingHere = false
-}: IEducationDetails) => {
+}: EducationDetails) => {
   return (
     <>
       <div className="w-32">
@@ -91,7 +91,7 @@ const EducationDetailsContent = ({
   );
 };
 
-const renderContent = (data: IWorkDetails | IEducationDetails) => {
+const renderContent = (data: EducationDetails | WorkDetails) => {
   switch (data.type) {
     case "work":
       return <WorkDetailsContent {...data} />;
@@ -102,7 +102,7 @@ const renderContent = (data: IWorkDetails | IEducationDetails) => {
   }
 };
 
-const TimelineContent = (data: IWorkDetails | IEducationDetails) => {
+const TimelineContent = (data: EducationDetails | WorkDetails) => {
   return (
     <div className="flex flex-col gap-6 rounded-md bg-white p-6 text-black shadow-md lg:flex-row">
       {renderContent(data)}

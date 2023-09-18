@@ -1,13 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
 import Header from "@/components/feature/header";
 import Footer from "@/components/feature/footer";
 import Providers from "@/components/feature/providers";
 import Script from "next/script";
 import { RootLayoutProps } from "@/types";
-
-const inter = Inter({ subsets: ["latin"] });
+import { inter } from "@/utils/fonts";
 
 const creator = "Krishnaprasad M.";
 const title = `${creator} | Full-Stack Developer`;

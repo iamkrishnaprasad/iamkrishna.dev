@@ -1,4 +1,4 @@
-import { IEducationDetails, IWorkDetails } from "@/types";
+import { EducationDetails, WorkDetails } from "@/types";
 import { TimelinePointer } from "./TimelinePointer";
 import { TimelineContentWrapper } from "./TimelineContentWrapper";
 import { TimelinePosition } from ".";
@@ -9,7 +9,7 @@ export const Timeline = ({
   data
 }: {
   position?: TimelinePosition;
-  data: IWorkDetails | IEducationDetails;
+  data: EducationDetails | WorkDetails;
 }) => {
   return (
     <div className="relative z-10">

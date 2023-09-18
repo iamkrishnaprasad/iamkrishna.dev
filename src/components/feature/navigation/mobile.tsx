@@ -5,7 +5,7 @@ import ThemeSwitcher from "../themeSwitcher";
 import { SECTIONS_AND_NAV_LINKS } from "@/helper";
 import Link from "@/components/common/link";
 import IconButton from "@/components/common/iconButton";
-import { Menu, X } from "lucide-react";
+import { LuMenu as MenuIcon, LuX as MenuCloseIcon } from "react-icons/lu";
 import { Section } from "@/types";
 
 const MobileNavigation = () => {
@@ -27,7 +27,9 @@ const MobileNavigation = () => {
         </div>
         <div className="h-6 w-0.5 bg-gray-100"></div>
         <div>
-          <IconButton onClick={toggleIsOpen}>{isOpen ? <X /> : <Menu />}</IconButton>
+          <IconButton onClick={toggleIsOpen}>
+            {isOpen ? <MenuCloseIcon /> : <MenuIcon />}
+          </IconButton>
         </div>
       </div>
       {isOpen ? (

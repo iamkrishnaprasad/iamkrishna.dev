@@ -34,7 +34,7 @@ import LogoFork from "public/assets/images/organizations/logo-fork.png";
 import LogoRenaissance from "public/assets/images/organizations/logo-renaissance.jpg";
 import LogoSMVIT from "public/assets/images/institutes/logo-smvit.png";
 
-import { IEducationDetails, IWorkDetails, TechnologyDetails } from "./types";
+import { EducationDetails, TechnologyDetails, WorkDetails } from "./types";
 
 export const SECTIONS_AND_NAV_LINKS = [
   { label: "Home", id: "hero", hideNav: true, isInActive: false },
@@ -178,7 +178,7 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
   }
 ];
 
-export const EXPERIENCES: (IWorkDetails | IEducationDetails)[] = [
+export const EXPERIENCES: (WorkDetails | EducationDetails)[] = [
   {
     type: "work",
     name: "Bigon IT Consulting Pvt. Ltd.",

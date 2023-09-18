@@ -30,16 +30,16 @@ type ExperienceDetails = {
   summary?: string[];
 };
 
-export interface IWorkDetails extends ExperienceDetails {
+export type WorkDetails = ExperienceDetails & {
   type: "work";
   position: string;
   isCurrentlyWorkHere?: boolean;
-}
+};
 
-export interface IEducationDetails extends ExperienceDetails {
+export type EducationDetails = ExperienceDetails & {
   type: "education";
   degree: string;
   areaOfStudy?: string;
   grade?: string;
   isCurrentlyStudyingHere?: boolean;
-}
+};
