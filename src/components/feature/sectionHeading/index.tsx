@@ -5,7 +5,7 @@ const SectionHeading = ({ title, subtitle }: { title: string; subtitle?: string 
     <div className="flex flex-col items-center gap-4">
       {title && (
         <div className="self-center">
-          <Typography variant="body1" className="font-medium">
+          <Typography variant="h3" className="font-medium">
             {title}
           </Typography>
         </div>
