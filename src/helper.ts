@@ -46,8 +46,8 @@ export const SECTIONS_AND_NAV_LINKS = [
 ];
 
 export const EXTERNAL_LINKS = {
-  GITHUB: "",
-  LINKEDIN: ""
+  GITHUB: "https://github.com/iamkrishnaprasad",
+  LINKEDIN: "https://www.linkedin.com/in/iamkrishnaprasad"
 };
 
 export const TECHNOLOGIES: TechnologyDetails[] = [
