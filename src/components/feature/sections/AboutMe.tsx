@@ -18,8 +18,8 @@ const AboutMeContent = () => {
     <>
       <SectionHeading title="About Me" />
       <div className="flex h-full flex-col md:flex-row">
-        <div className="flex h-3/5 w-full items-center justify-center p-4 md:h-full md:w-1/3 md:p-16">
-          <div className="flex w-3/5 md:w-[85%]">
+        <div className="flex h-3/5 w-full items-center justify-center p-4 md:h-full md:w-1/3 md:py-16">
+          <div className="flex h-full w-auto md:h-auto md:w-[85%]">
             <ImageWrapper
               src={"/assets/images/profile-01.jpg"}
               alt="Profile Image"
