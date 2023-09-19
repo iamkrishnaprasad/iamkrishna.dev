@@ -50,6 +50,29 @@ export const EXTERNAL_LINKS = {
   LINKEDIN: "https://www.linkedin.com/in/iamkrishnaprasad"
 };
 
+export const CONTACT_ME = {
+  call: {
+    label: "+91 8848 333 943",
+    value: "tel:+918848333943",
+    isExternalLink: false
+  },
+  whatsApp: {
+    label: "+91 8848 333 943",
+    value: "http://wa.me/918848333943?text=Hi",
+    isExternalLink: true
+  },
+  email: {
+    label: "contactme@iamkrishna.dev",
+    value: "mailto:contactme@iamkrishna.dev",
+    isExternalLink: false
+  },
+  map: {
+    label: "Malappuram, Kerala",
+    value: "https://maps.app.goo.gl/7UpS5zqHLURNqXLq7",
+    isExternalLink: true
+  }
+};
+
 export const TECHNOLOGIES: TechnologyDetails[] = [
   {
     label: "HTML",
@@ -186,7 +209,7 @@ export const EXPERIENCES: (WorkDetails | EducationDetails)[] = [
     url: "",
     position: "Software Engineer",
     isCurrentlyWorkHere: true,
-    startDate: new Date(2022, 4),
+    startDate: new Date(2022, 4, 2),
     summary: ["Working as Consulting Software Engineer for Telus."]
   },
   {
@@ -196,7 +219,7 @@ export const EXPERIENCES: (WorkDetails | EducationDetails)[] = [
     url: "",
     position: "Software Engineer (Consultant)",
     isCurrentlyWorkHere: true,
-    startDate: new Date(2021, 6),
+    startDate: new Date(2021, 6, 12),
     summary: [
       "Worked on 'CASA Spring' - Project for Telus Digital.",
       "Worked on 'Multi Benefits Claim Management (MBCM)' - Project for Telus Health.",
@@ -213,8 +236,8 @@ export const EXPERIENCES: (WorkDetails | EducationDetails)[] = [
     logo: LogoFork,
     url: "",
     position: "Software Engineer",
-    startDate: new Date(2021, 4),
-    endDate: new Date(2022, 3),
+    startDate: new Date(2021, 4, 11),
+    endDate: new Date(2022, 3, 30),
     summary: ["Worked as Consulting Software Engineer for Telus."]
   },
   {
@@ -222,8 +245,8 @@ export const EXPERIENCES: (WorkDetails | EducationDetails)[] = [
     name: "Renaissance Technologies Pvt. Ltd.",
     logo: LogoRenaissance,
     url: "",
-    startDate: new Date(2019, 3),
-    endDate: new Date(2021, 3),
+    startDate: new Date(2019, 3, 1),
+    endDate: new Date(2021, 3, 30),
     position: "Associate Software Engineer",
     summary: [
       "Built graphical dashboard for Toyota to track their day-to-day web leads.",
@@ -245,44 +268,6 @@ export const EXPERIENCES: (WorkDetails | EducationDetails)[] = [
     degree: "Masters in Computer Application (MCA)"
   }
 ];
-
-// export const EXPERIENCES: ExperienceDetails[] = [
-//   {
-//     logo: LogoUpwork,
-//     logoAlt: "Upwork logo",
-//     position: "Independent Freelancer",
-//     startDate: new Date(2021, 10),
-//     currentlyWorkHere: true,
-//     summary: [
-//       "Worked for various clients like Fiskil, Shosho, Crowe MacKay LLP.",
-//       "Worked with a variety of technologies, including React, Next.js, Typescript, Express.js, PostgreSQL, Tailwindcss, Mui, Firebase, Storybook, Cypress, and others."
-//     ]
-//   },
-//   {
-//     logo: LogoGreenApex,
-//     darkModeLogo: LogoGreenApexLight,
-//     logoAlt: "Greenapex logo",
-//     position: "Team Lead",
-//     startDate: new Date(2017, 6),
-//     endDate: new Date(2021, 9),
-//     summary: [
-//       "Acted as team lead in different projects.",
-//       "Brainstormed new ideas & gathered requirements for internal projects.",
-//       "Designed architecture of different projects (frontend + backend).",
-//       "Worked on enterprise-level projects for a variety of clients.",
-//       "Handled sprint planning & task distribution."
-//     ]
-//   },
-//   {
-//     logo: LogoDotnpixel,
-//     darkModeLogo: LogoDotnpixelLight,
-//     logoAlt: "Dotnpixel logo",
-//     position: "Full Stack Developer",
-//     startDate: new Date(2015, 11),
-//     endDate: new Date(2017, 4),
-//     summary: ["Worked as a full stack developer (React / Laravel)."]
-//   }
-// ];
 
 // export const PROJECTS: ProjectDetails[] = [
 //   {
