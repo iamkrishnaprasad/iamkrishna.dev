@@ -43,3 +43,11 @@ export type EducationDetails = ExperienceDetails & {
   grade?: string;
   isCurrentlyStudyingHere?: boolean;
 };
+
+export type ContactDetails = {
+  type: string;
+  label: string;
+  value: string;
+  icon?: string | StaticImageData | React.ReactElement;
+  isExternalLink?: boolean;
+};

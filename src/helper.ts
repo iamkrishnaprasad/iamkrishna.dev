@@ -34,7 +34,11 @@ import LogoFork from "public/assets/images/organizations/logo-fork.png";
 import LogoRenaissance from "public/assets/images/organizations/logo-renaissance.jpg";
 import LogoSMVIT from "public/assets/images/institutes/logo-smvit.png";
 
-import { EducationDetails, TechnologyDetails, WorkDetails } from "./types";
+import { ContactDetails, EducationDetails, TechnologyDetails, WorkDetails } from "./types";
+import { FaWhatsapp as WhatsappIcon } from "react-icons/fa";
+import { LuPhone as PhoneIcon, LuMail as MailIcon } from "react-icons/lu";
+import { SlLocationPin as LocationDotIcon } from "react-icons/sl";
+import React from "react";
 
 export const SECTIONS_AND_NAV_LINKS = [
   { label: "Home", id: "hero", hideNav: true, isInActive: false },
@@ -50,28 +54,47 @@ export const EXTERNAL_LINKS = {
   LINKEDIN: "https://www.linkedin.com/in/iamkrishnaprasad"
 };
 
-export const CONTACT_ME = {
-  call: {
+export const renderIcon = (type: string) => {
+  switch (type.toLowerCase()) {
+    case "call":
+      return React.createElement(PhoneIcon, { size: 36 });
+    case "whatsapp":
+      return React.createElement(WhatsappIcon, { size: 36 });
+    case "email":
+      return React.createElement(MailIcon, { size: 36 });
+    case "map":
+      return React.createElement(LocationDotIcon, { size: 36 });
+    default:
+      return null;
+  }
+};
+
+export const CONTACT_DETAILS: ContactDetails[] = [
+  {
+    type: "Call",
     label: "+91 8848 333 943",
     value: "tel:+918848333943",
     isExternalLink: false
   },
-  whatsApp: {
+  {
+    type: "WhatsApp",
     label: "+91 8848 333 943",
     value: "http://wa.me/918848333943?text=Hi",
     isExternalLink: true
   },
-  email: {
+  {
+    type: "Email",
     label: "contactme@iamkrishna.dev",
     value: "mailto:contactme@iamkrishna.dev",
     isExternalLink: false
   },
-  map: {
+  {
+    type: "Map",
     label: "Malappuram, Kerala",
     value: "https://maps.app.goo.gl/7UpS5zqHLURNqXLq7",
     isExternalLink: true
   }
-};
+];
 
 export const TECHNOLOGIES: TechnologyDetails[] = [
   {
