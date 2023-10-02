@@ -51,3 +51,9 @@ export type ContactDetails = {
   icon?: string | StaticImageData | React.ReactElement;
   isExternalLink?: boolean;
 };
+
+export type LinkButtonProps = {
+  url: string;
+  target: "_self" | "_blank" | "_parent" | "_top";
+  label: string;
+};

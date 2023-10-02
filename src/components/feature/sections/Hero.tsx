@@ -2,8 +2,8 @@ import ImageWrapper from "@/components/common/imageWrapper";
 import Link from "@/components/common/link";
 import Typography from "@/components/common/typography";
 import { FaLinkedin as LinkedinIcon, FaGithub as GithubIcon } from "react-icons/fa";
-import DownloadCV from "../downloadCV";
 import { EXTERNAL_LINKS } from "@/helper";
+import LinkButton from "@/components/common/linkButton";
 
 const HeroContent = () => {
   return (
@@ -19,7 +19,7 @@ const HeroContent = () => {
           <Typography variant="h3" className="text-gray-600">
             Fullstack Developer
           </Typography>
-          <DownloadCV />
+          <LinkButton url="/files/krishnaprasad-m_cv.pdf" target="_blank" label="Download CV" />
         </div>
         <div className="flex h-[20%] items-center justify-center gap-9 md:absolute md:bottom-0 md:left-0 md:right-0">
           <Link href={`${EXTERNAL_LINKS.LINKEDIN}`} isExternalLink>
