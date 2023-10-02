@@ -34,7 +34,15 @@ import LogoFork from "public/assets/images/organizations/logo-fork.png";
 import LogoRenaissance from "public/assets/images/organizations/logo-renaissance.jpg";
 import LogoSMVIT from "public/assets/images/institutes/logo-smvit.png";
 
-import { ContactDetails, EducationDetails, TechnologyDetails, WorkDetails } from "./types";
+import ProjectPortfolio from "public/assets/images/projects/project-portfolio.jpg";
+
+import {
+  ContactDetails,
+  EducationDetails,
+  ProjectDetails,
+  TechnologyDetails,
+  WorkDetails
+} from "./types";
 import { FaWhatsapp as WhatsappIcon } from "react-icons/fa";
 import { LuPhone as PhoneIcon, LuMail as MailIcon } from "react-icons/lu";
 import { SlLocationPin as LocationDotIcon } from "react-icons/sl";
@@ -53,48 +61,6 @@ export const EXTERNAL_LINKS = {
   GITHUB: "https://github.com/iamkrishnaprasad",
   LINKEDIN: "https://www.linkedin.com/in/iamkrishnaprasad"
 };
-
-export const renderIcon = (type: string) => {
-  switch (type.toLowerCase()) {
-    case "call":
-      return React.createElement(PhoneIcon, { size: 36 });
-    case "whatsapp":
-      return React.createElement(WhatsappIcon, { size: 36 });
-    case "email":
-      return React.createElement(MailIcon, { size: 36 });
-    case "map":
-      return React.createElement(LocationDotIcon, { size: 36 });
-    default:
-      return null;
-  }
-};
-
-export const CONTACT_DETAILS: ContactDetails[] = [
-  {
-    type: "Call",
-    label: "+91 8848 333 943",
-    value: "tel:+918848333943",
-    isExternalLink: false
-  },
-  {
-    type: "WhatsApp",
-    label: "+91 8848 333 943",
-    value: "http://wa.me/918848333943?text=Hi",
-    isExternalLink: true
-  },
-  {
-    type: "Email",
-    label: "contactme@iamkrishna.dev",
-    value: "mailto:contactme@iamkrishna.dev",
-    isExternalLink: false
-  },
-  {
-    type: "Map",
-    label: "Malappuram, Kerala",
-    value: "https://maps.app.goo.gl/7UpS5zqHLURNqXLq7",
-    isExternalLink: true
-  }
-];
 
 export const TECHNOLOGIES: TechnologyDetails[] = [
   {
@@ -292,60 +258,72 @@ export const EXPERIENCES: (WorkDetails | EducationDetails)[] = [
   }
 ];
 
-// export const PROJECTS: ProjectDetails[] = [
-//   {
-//     name: "Wingie",
-//     description:
-//       "A platform for comparing and finding affordable flights, as well as booking and purchasing tickets safely and easily in a few simple clicks.",
-//     url: "https://www.wingie.com",
-//     previewImage: ProjectWingie,
-//     technologies: [
-//       "React",
-//       "Typescript",
-//       "React Bootstrap",
-//       "Firebase",
-//       "Express.js",
-//       "PostgreSQL",
-//       "Styled Components",
-//       "Redux"
-//     ]
-//   },
-//   {
-//     name: "Fiskil",
-//     description:
-//       "A platform for accessing real-time open banking and energy data to help you grow your business, backed with scalable back-end infrastructure.",
-//     url: "https://fiskil.com.au",
-//     previewImage: ProjectFiskil,
-//     technologies: [
-//       "React",
-//       "Next.js",
-//       "Typescript",
-//       "Tailwindcss",
-//       "Material UI",
-//       "Redux Toolkit",
-//       "React Query",
-//       "Express.js",
-//       "PostgreSQL",
-//       "Firebase",
-//       "AWS Amplify",
-//       "Cypress",
-//       "Storybook"
-//     ]
-//   },
-//   {
-//     name: "Pepehousing",
-//     description:
-//       "A platform for renting a flat or room in Poland. You may browse hundreds of verified deals, contact the vendor, and pay online in a simple and secure manner.",
-//     url: "https://pepehousing.com",
-//     previewImage: ProjectPepehousing,
-//     technologies: [
-//       "React",
-//       "Next.js",
-//       "Typescript",
-//       "Tailwindcss",
-//       "Redux Toolkit",
-//       "React Query",
-//       "Storybook"
-//     ]
-//   }
-// ];
+export const PROJECTS: ProjectDetails[] = [
+  {
+    name: "My Portfolio Website",
+    description:
+      "A platform to showcase my skills, experience, and collections of projects. It provides visitors with a comprehensive view of my professional abilities and past work.",
+    url: "https://iamkrishna.dev",
+    sourceCode: "https://github.com/iamkrishnaprasad/iamkrishna.dev",
+    previewImage: ProjectPortfolio,
+    technologies: [
+      {
+        label: "Next.js",
+        logo: LogoNextJS,
+        url: "https://nextjs.org/"
+      },
+      {
+        label: "Typescript",
+        logo: LogoTypescript,
+        url: "https://www.typescriptlang.org/"
+      },
+      {
+        label: "Tailwind CSS",
+        logo: LogoTailwindcss,
+        url: "https://tailwindcss.com/"
+      }
+    ]
+  }
+];
+
+export const renderIcon = (type: string, size: number = 36) => {
+  switch (type.toLowerCase()) {
+    case "call":
+      return React.createElement(PhoneIcon, { size });
+    case "whatsapp":
+      return React.createElement(WhatsappIcon, { size });
+    case "email":
+      return React.createElement(MailIcon, { size });
+    case "map":
+      return React.createElement(LocationDotIcon, { size });
+    default:
+      return null;
+  }
+};
+
+export const CONTACT_DETAILS: ContactDetails[] = [
+  {
+    type: "Call",
+    label: "+91 8848 333 943",
+    value: "tel:+918848333943",
+    isExternalLink: false
+  },
+  {
+    type: "WhatsApp",
+    label: "+91 8848 333 943",
+    value: "http://wa.me/918848333943?text=Hi",
+    isExternalLink: true
+  },
+  {
+    type: "Email",
+    label: "contactme@iamkrishna.dev",
+    value: "mailto:contactme@iamkrishna.dev",
+    isExternalLink: false
+  },
+  {
+    type: "Map",
+    label: "Malappuram, Kerala",
+    value: "https://maps.app.goo.gl/7UpS5zqHLURNqXLq7",
+    isExternalLink: true
+  }
+];

@@ -44,6 +44,15 @@ export type EducationDetails = ExperienceDetails & {
   isCurrentlyStudyingHere?: boolean;
 };
 
+export type ProjectDetails = {
+  name: string;
+  description: string;
+  url: string;
+  sourceCode?: string;
+  previewImage: string | StaticImageData;
+  technologies: TechnologyDetails[];
+};
+
 export type ContactDetails = {
   type: string;
   label: string;
