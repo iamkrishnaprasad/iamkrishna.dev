@@ -263,7 +263,7 @@ export const PROJECTS: ProjectDetails[] = [
     name: "My Portfolio Website",
     description:
       "A platform to showcase my skills, experience, and collections of projects. It provides visitors with a comprehensive view of my professional abilities and past work.",
-    url: "https://iamkrishna.dev",
+    // url: "https://iamkrishna.dev",
     sourceCode: "https://github.com/iamkrishnaprasad/iamkrishna.dev",
     previewImage: ProjectPortfolio,
     technologies: [

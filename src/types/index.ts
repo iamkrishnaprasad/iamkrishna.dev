@@ -47,7 +47,7 @@ export type EducationDetails = ExperienceDetails & {
 export type ProjectDetails = {
   name: string;
   description: string;
-  url: string;
+  url?: string;
   sourceCode?: string;
   previewImage: string | StaticImageData;
   technologies: TechnologyDetails[];
