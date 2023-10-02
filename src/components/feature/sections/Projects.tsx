@@ -37,8 +37,8 @@ const ProjectsContent = () => {
                       {project.description}
                     </Typography>
                   </div>
-                  <div className="flex flex-col gap-4">
-                    <div className="flex flex-row gap-2">
+                  <div className="flex flex-row gap-2">
+                    <div className="flex w-1/2 flex-row flex-wrap gap-2">
                       {project?.technologies?.map((technology) => {
                         return (
                           <div key={technology.label} className="flex flex-col items-center gap-2">
@@ -56,7 +56,7 @@ const ProjectsContent = () => {
                       })}
                     </div>
                     {project?.url || project?.sourceCode ? (
-                      <div className="flex justify-evenly">
+                      <div className="flex w-1/2 items-end justify-evenly gap-2">
                         {project?.url && (
                           <LinkButton url={project?.url} target="_blank" label="View" />
                         )}
