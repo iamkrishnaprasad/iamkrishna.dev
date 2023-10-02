@@ -20,6 +20,7 @@ import LogoReact from "/public/assets/images/logos/icon-react.svg";
 import LogoReactPDF from "/public/assets/images/logos/icon-react-pdf.png";
 import LogoReactTestingLibrary from "/public/assets/images/logos/icon-react-testing-library.svg";
 import LogoRedis from "/public/assets/images/logos/icon-redis.svg";
+import LogoRedux from "/public/assets/images/logos/icon-redux.svg";
 import LogoSass from "/public/assets/images/logos/icon-sass.svg";
 import LogoSocket from "/public/assets/images/logos/icon-socket.svg";
 import LogoSocketLight from "/public/assets/images/logos/icon-socket-light.svg";
@@ -96,6 +97,11 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
     url: "https://nextjs.org/"
   },
   {
+    label: "Redux",
+    logo: LogoRedux,
+    url: "https://redux.js.org/"
+  },
+  {
     label: "Node.js",
     logo: LogoNodeJS,
     url: "https://nodejs.org/"
@@ -127,6 +133,7 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
     logo: LogoRedis,
     url: "https://redis.io/"
   },
+
   // {
   //   label: "MongoDB",
   //   logo: LogoMongoDB,
