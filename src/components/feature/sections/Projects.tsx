@@ -29,7 +29,7 @@ const ProjectsContent = () => {
               </div>
               <div className="flex h-auto w-full flex-col">
                 <div className="flex h-full flex-col justify-between gap-2">
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-4">
                     <Typography variant="h3" className=" text-xl md:text-2xl">
                       {project.name}
                     </Typography>
@@ -37,7 +37,7 @@ const ProjectsContent = () => {
                       {project.description}
                     </Typography>
                   </div>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-4">
                     <div className="flex flex-row gap-2">
                       {project?.technologies?.map((technology) => {
                         return (
