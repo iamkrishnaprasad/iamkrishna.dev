@@ -28,7 +28,7 @@ const ProjectsContent = () => {
                 </div>
               </div>
               <div className="flex h-auto w-full flex-col">
-                <div className="flex h-full flex-col justify-between gap-2">
+                <div className="flex h-full flex-col justify-between gap-4">
                   <div className="flex flex-col gap-4">
                     <Typography variant="h3" className=" text-xl md:text-2xl">
                       {project.name}
