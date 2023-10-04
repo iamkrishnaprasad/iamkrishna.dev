@@ -51,7 +51,9 @@ const ContactMeContent = () => {
               maxLength={5000}
               className="h-52 rounded-lg border border-black/10 p-4 md:h-80"
             ></textarea>
-            <SubmitBtn />
+            <div className="flex justify-center md:justify-end ">
+              <SubmitBtn />
+            </div>
           </form>
           <hr className="" />
           <div className="flex justify-center gap-16 md:gap-20">
