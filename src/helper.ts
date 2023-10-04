@@ -1,11 +1,11 @@
 import LogoCSS from "/public/assets/images/logos/icon-css.svg";
-import LogoCSSLight from "/public/assets/images/logos/icon-css-light.svg";
+import LogoCSSDark from "/public/assets/images/logos/icon-css-dark.svg";
 import LogoCypress from "/public/assets/images/logos/icon-cypress.svg";
-import LogoCypressLight from "/public/assets/images/logos/icon-cypress-light.svg";
+import LogoCypressDark from "/public/assets/images/logos/icon-cypress-dark.svg";
 import LogoExpressJS from "/public/assets/images/logos/icon-express-js.svg";
-import LogoExpressJSLight from "/public/assets/images/logos/icon-express-js-light.svg";
+import LogoExpressJSDark from "/public/assets/images/logos/icon-express-js-dark.svg";
 import LogoHTML from "/public/assets/images/logos/icon-html.svg";
-import LogoHTMLLight from "/public/assets/images/logos/icon-html-light.svg";
+import LogoHTMLDark from "/public/assets/images/logos/icon-html-dark.svg";
 import LogoFigma from "/public/assets/images/logos/icon-figma.svg";
 import LogoGit from "/public/assets/images/logos/icon-git.svg";
 import LogoJavascript from "/public/assets/images/logos/icon-javascript.svg";
@@ -17,13 +17,15 @@ import LogoNextJS from "/public/assets/images/logos/icon-next-js.svg";
 import LogoNodeJS from "/public/assets/images/logos/icon-node-js.svg";
 import LogoPostgreSQL from "/public/assets/images/logos/icon-postgresql.svg";
 import LogoReact from "/public/assets/images/logos/icon-react.svg";
+import LogoReactEmail from "/public/assets/images/logos/icon-react-email.svg";
+import LogoReactEmailDark from "/public/assets/images/logos/icon-react-email-dark.svg";
 import LogoReactPDF from "/public/assets/images/logos/icon-react-pdf.png";
 import LogoReactTestingLibrary from "/public/assets/images/logos/icon-react-testing-library.svg";
 import LogoRedis from "/public/assets/images/logos/icon-redis.svg";
 import LogoRedux from "/public/assets/images/logos/icon-redux.svg";
 import LogoSass from "/public/assets/images/logos/icon-sass.svg";
 import LogoSocket from "/public/assets/images/logos/icon-socket.svg";
-import LogoSocketLight from "/public/assets/images/logos/icon-socket-light.svg";
+import LogoSocketDark from "/public/assets/images/logos/icon-socket-dark.svg";
 import LogoStorybook from "/public/assets/images/logos/icon-storybook.svg";
 import LogoStyledComponents from "/public/assets/images/logos/icon-styled-components.png";
 import LogoTailwindcss from "/public/assets/images/logos/icon-tailwindcss.svg";
@@ -44,7 +46,11 @@ import {
   TechnologyDetails,
   WorkDetails
 } from "./types";
-import { FaWhatsapp as WhatsappIcon } from "react-icons/fa";
+import {
+  FaGithub as GithubIcon,
+  FaLinkedin as LinkedinIcon,
+  FaWhatsapp as WhatsappIcon
+} from "react-icons/fa";
 import { LuPhone as PhoneIcon, LuMail as MailIcon } from "react-icons/lu";
 import { SlLocationPin as LocationDotIcon } from "react-icons/sl";
 import React from "react";
@@ -67,13 +73,13 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
   {
     label: "HTML",
     logo: LogoHTML,
-    darkModeLogo: LogoHTMLLight,
+    darkModeLogo: LogoHTMLDark,
     url: "https://html.spec.whatwg.org/"
   },
   {
     label: "CSS",
     logo: LogoCSS,
-    darkModeLogo: LogoCSSLight,
+    darkModeLogo: LogoCSSDark,
     url: "https://www.w3.org/Style/CSS/"
   },
   {
@@ -109,7 +115,7 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
   {
     label: "Express.js",
     logo: LogoExpressJS,
-    darkModeLogo: LogoExpressJSLight,
+    darkModeLogo: LogoExpressJSDark,
     url: "https://expressjs.com/"
   },
   // {
@@ -120,7 +126,7 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
   // {
   //   label: "Socket.io",
   //   logo: LogoSocket,
-  //   darkModeLogo: LogoSocketLight,
+  //   darkModeLogo: LogoSocketDark,
   //   url: "https://socket.io/"
   // },
   {
@@ -167,7 +173,7 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
   // {
   //   label: "Cypress",
   //   logo: LogoCypress,
-  //   darkModeLogo: LogoCypressLight,
+  //   darkModeLogo: LogoCypressDark,
   //   url: "https://www.cypress.io/"
   // },
   // {
@@ -185,6 +191,12 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
     logo: LogoReactPDF,
     url: "https://react-pdf.org/"
   },
+  // {
+  //   label: "React Email",
+  //   logo: LogoReactEmail,
+  //   darkModeLogo: LogoReactEmailDark,
+  //   url: "https://react.email/"
+  // },
   {
     label: "Jest",
     logo: LogoJest,
@@ -289,6 +301,12 @@ export const PROJECTS: ProjectDetails[] = [
         logo: LogoTailwindcss,
         url: "https://tailwindcss.com/"
       }
+      // {
+      //   label: "React Email",
+      //   logo: LogoReactEmail,
+      //   darkModeLogo: LogoReactEmailDark,
+      //   url: "https://react.email/"
+      // }
     ]
   }
 ];
@@ -303,6 +321,10 @@ export const renderIcon = (type: string, size: number = 36) => {
       return React.createElement(MailIcon, { size });
     case "map":
       return React.createElement(LocationDotIcon, { size });
+    case "github":
+      return React.createElement(GithubIcon, { size });
+    case "linkedin":
+      return React.createElement(LinkedinIcon, { size });
     default:
       return null;
   }
@@ -321,16 +343,28 @@ export const CONTACT_DETAILS: ContactDetails[] = [
     value: "http://wa.me/918848333943?text=Hi",
     isExternalLink: true
   },
+  // {
+  //   type: "Email",
+  //   label: "contactme@iamkrishna.dev",
+  //   value: "mailto:contactme@iamkrishna.dev",
+  //   isExternalLink: false
+  // },
+  // {
+  //   type: "Github",
+  //   label: "Github",
+  //   value: "https://github.com/iamkrishnaprasad",
+  //   isExternalLink: true
+  // },
   {
-    type: "Email",
-    label: "contactme@iamkrishna.dev",
-    value: "mailto:contactme@iamkrishna.dev",
-    isExternalLink: false
-  },
-  {
-    type: "Map",
-    label: "Malappuram, Kerala",
-    value: "https://maps.app.goo.gl/7UpS5zqHLURNqXLq7",
+    type: "LinkedIn",
+    label: "LinkedIn",
+    value: "https://www.linkedin.com/in/iamkrishnaprasad",
     isExternalLink: true
   }
+  // {
+  //   type: "Map",
+  //   label: "Malappuram, Kerala",
+  //   value: "https://maps.app.goo.gl/7UpS5zqHLURNqXLq7",
+  //   isExternalLink: true
+  // }
 ];

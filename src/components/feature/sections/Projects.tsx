@@ -30,10 +30,10 @@ const ProjectsContent = () => {
               <div className="flex h-auto w-full flex-col">
                 <div className="flex h-full flex-col justify-between gap-4">
                   <div className="flex flex-col gap-4">
-                    <Typography variant="h3" className=" text-xl md:text-2xl">
+                    <Typography variant="h3" className="text-xl md:text-2xl">
                       {project.name}
                     </Typography>
-                    <Typography variant="body2" className=" text-lg md:text-xl">
+                    <Typography variant="body2" className="text-lg md:text-xl">
                       {project.description}
                     </Typography>
                   </div>

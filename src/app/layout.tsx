@@ -7,6 +7,7 @@ import Providers from "@/components/feature/providers";
 import Script from "next/script";
 import { RootLayoutProps } from "@/types";
 import { inter } from "@/utils/fonts";
+import { Toaster } from "react-hot-toast";
 
 const creator = "Krishnaprasad M.";
 const title = `${creator} | Full-Stack Developer`;
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Header />
           <main>{children}</main>
           <Footer />
+          <Toaster position="top-right" />
         </Providers>
       </body>
     </html>
