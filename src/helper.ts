@@ -287,6 +287,11 @@ export const PROJECTS: ProjectDetails[] = [
     previewImage: ProjectPortfolio,
     technologies: [
       {
+        label: "React",
+        logo: LogoReact,
+        url: "https://react.dev/"
+      },
+      {
         label: "Next.js",
         logo: LogoNextJS,
         url: "https://nextjs.org/"
