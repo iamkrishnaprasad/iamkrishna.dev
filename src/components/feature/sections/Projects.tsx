@@ -4,6 +4,7 @@ import ImageWrapper from "@/components/common/imageWrapper";
 import { PROJECTS } from "@/helper";
 import Typography from "@/components/common/typography";
 import LinkButton from "@/components/common/linkButton";
+import Tooltip from "@/components/common/tooltip";
 
 const ProjectsContent = () => {
   return (
@@ -42,15 +43,17 @@ const ProjectsContent = () => {
                       {project?.technologies?.map((technology) => {
                         return (
                           <div key={technology.label} className="flex flex-col items-center gap-2">
-                            <div className="flex h-8 w-8 items-center justify-center">
-                              <ImageWrapper
-                                src={technology?.logo}
-                                srcForDarkMode={technology?.darkModeLogo}
-                                alt={technology?.label}
-                                width={100}
-                                className="max-h-full max-w-full transition-transform duration-300 md:hover:scale-110"
-                              />
-                            </div>
+                            <Tooltip message={technology.label}>
+                              <div className="flex h-8 w-8 items-center justify-center">
+                                <ImageWrapper
+                                  src={technology?.logo}
+                                  srcForDarkMode={technology?.darkModeLogo}
+                                  alt={technology?.label}
+                                  width={100}
+                                  className="max-h-full max-w-full transition-transform duration-300 md:hover:scale-110"
+                                />
+                              </div>
+                            </Tooltip>
                           </div>
                         );
                       })}
