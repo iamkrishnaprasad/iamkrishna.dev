@@ -282,7 +282,6 @@ export const PROJECTS: ProjectDetails[] = [
     name: "My Portfolio Website",
     description:
       "A platform to showcase my skills, experience, and collections of projects. It provides visitors with a comprehensive view of my professional abilities and past work.",
-    // url: "https://iamkrishna.dev",
     sourceCode: "https://github.com/iamkrishnaprasad/iamkrishna.dev",
     previewImage: ProjectPortfolio,
     technologies: [
@@ -354,12 +353,12 @@ export const CONTACT_DETAILS: ContactDetails[] = [
   //   value: "mailto:contactme@iamkrishna.dev",
   //   isExternalLink: false
   // },
-  // {
-  //   type: "Github",
-  //   label: "Github",
-  //   value: "https://github.com/iamkrishnaprasad",
-  //   isExternalLink: true
-  // },
+  {
+    type: "Github",
+    label: "Github",
+    value: "https://github.com/iamkrishnaprasad",
+    isExternalLink: true
+  },
   {
     type: "LinkedIn",
     label: "LinkedIn",

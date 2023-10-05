@@ -56,7 +56,7 @@ const ContactMeContent = () => {
             </div>
           </form>
           <hr className="" />
-          <div className="flex justify-center gap-16 md:gap-20">
+          <div className="flex justify-center gap-8 sm:gap-16 md:gap-20">
             {CONTACT_DETAILS.map((contactDetail) => {
               return (
                 <a
