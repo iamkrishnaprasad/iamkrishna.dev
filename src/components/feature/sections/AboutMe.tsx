@@ -31,7 +31,7 @@ const AboutMeContent = () => {
             />
           </div>
         </div>
-        <div className="flex h-auto w-full flex-col items-start justify-center p-4 md:h-full md:w-2/3 md:items-center md:p-16">
+        <div className="flex h-auto w-full flex-col items-start p-4 md:h-full md:w-2/3 md:p-16">
           {/* <Typography variant="body1">
             I am a full-stack developer offering {yearOfExperiences} of experience
             providing high-impact web solutions for diverse industry organizations. Skilled in
