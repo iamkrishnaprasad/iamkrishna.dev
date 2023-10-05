@@ -19,7 +19,7 @@ const HeroContent = () => {
           <Typography variant="h3" className="text-gray-600">
             Fullstack Developer
           </Typography>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 md:flex-row">
             <LinkButton url="/files/krishnaprasad-m_cv.pdf" target="_blank" label="Download CV" />
             <LinkButton url="#contactMe" target="_self" label="Contact Me" />
           </div>
