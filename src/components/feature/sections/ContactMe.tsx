@@ -3,12 +3,82 @@
 import SectionHeading from "../sectionHeading";
 import Typography from "@/components/common/typography";
 import { CONTACT_DETAILS, renderIcon } from "@/helper";
-import { sendEmail } from "@/actions/sendEmail";
 
 import SubmitBtn from "../submitBtn/submit-btn";
 import toast from "react-hot-toast";
+import { useState } from "react";
+import { isEmail } from "@/utils";
+
+type FormData = {
+  senderEmail: string;
+  message: string;
+};
+
+const initialState: FormData = {
+  senderEmail: "",
+  message: ""
+};
+
+const validateFormData = (data: FormData): FormData => {
+  let errors = {} as FormData;
+
+  const requiredMessage = "This field is required.";
+
+  if (!data?.senderEmail?.trim() || data?.senderEmail?.trim() === "") {
+    errors.senderEmail = requiredMessage;
+  } else if (!isEmail(data?.senderEmail)) {
+    errors.senderEmail = "Please enter a valid email address.";
+  }
+
+  if (!data?.message?.trim() || data?.message?.trim() === "") {
+    errors.message = requiredMessage;
+  }
+
+  return errors;
+};
 
 const ContactMeContent = () => {
+  const [formData, setFormData] = useState<FormData>(initialState);
+  const [errors, setErrors] = useState<FormData>(initialState);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const errors = validateFormData(formData);
+    setErrors(errors);
+
+    if (Object.keys(errors).length) return;
+
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "content-type": "application/json"
+        }
+      });
+      const result = await response.json();
+      if (result?.statusCode && result?.statusCode >= 400) {
+        toast.error(result?.message);
+      } else {
+        toast.success(result?.message);
+        setFormData(initialState);
+      }
+    } catch (error) {
+      console.log("error: ", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = event.target;
+    const newFormData = { ...formData, [name]: value };
+    setFormData(newFormData);
+    setErrors(validateFormData(newFormData));
+  };
+
   return (
     <>
       <SectionHeading title="Contact Me" />
@@ -21,38 +91,42 @@ const ContactMeContent = () => {
             </a>{" "}
             or through this form.
           </Typography>
-          <form
-            className="flex w-full flex-col gap-4"
-            action={async (formData) => {
-              const data = (await sendEmail(formData)) as any;
-              if ((data?.statusCode && data?.statusCode >= 400) || data?.message) {
-                toast.error(data.message);
-              } else {
-                toast.success("Email sent successfully!");
-              }
-            }}
-          >
-            <input
-              autoComplete="off"
-              type="email"
-              name="senderEmail"
-              id="formEmailId"
-              placeholder="Your email"
-              required
-              maxLength={320}
-              className="h-14 rounded-lg border border-black/10 px-4"
-            />
-            <textarea
-              autoComplete="off"
-              name="message"
-              id="formEmailMessage"
-              placeholder="Your message"
-              required
-              maxLength={5000}
-              className="h-52 rounded-lg border border-black/10 p-4 md:h-80"
-            ></textarea>
+          <form className="flex w-full flex-col gap-4" onSubmit={handleSubmit} noValidate>
+            <div className="flex w-full flex-col gap-1">
+              <input
+                autoComplete="off"
+                type="email"
+                name="senderEmail"
+                id="formEmailId"
+                placeholder="Your email"
+                maxLength={320}
+                value={formData.senderEmail}
+                onChange={handleChange}
+                className="h-14 rounded-lg border border-black/10 px-4"
+              />
+              {errors?.senderEmail && (
+                <span className="font px-4 text-left text-sm text-red-600">
+                  {errors.senderEmail}
+                </span>
+              )}
+            </div>
+            <div className="flex w-full flex-col gap-1">
+              <textarea
+                autoComplete="off"
+                name="message"
+                id="formEmailMessage"
+                placeholder="Your message"
+                maxLength={5000}
+                value={formData.message}
+                onChange={handleChange}
+                className="h-52 rounded-lg border border-black/10 p-4 md:h-80"
+              />
+              {errors?.message && (
+                <span className="font px-4 text-left text-sm text-red-600">{errors.message}</span>
+              )}
+            </div>
             <div className="flex justify-center md:justify-end ">
-              <SubmitBtn />
+              <SubmitBtn pending={isLoading} />
             </div>
           </form>
           <hr className="" />

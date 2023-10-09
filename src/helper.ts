@@ -23,6 +23,8 @@ import LogoReactPDF from "/public/assets/images/logos/icon-react-pdf.png";
 import LogoReactTestingLibrary from "/public/assets/images/logos/icon-react-testing-library.svg";
 import LogoRedis from "/public/assets/images/logos/icon-redis.svg";
 import LogoRedux from "/public/assets/images/logos/icon-redux.svg";
+import LogoResend from "/public/assets/images/logos/icon-resend.png";
+import LogoResendDark from "/public/assets/images/logos/icon-resend-dark.png";
 import LogoSass from "/public/assets/images/logos/icon-sass.svg";
 import LogoSocket from "/public/assets/images/logos/icon-socket.svg";
 import LogoSocketDark from "/public/assets/images/logos/icon-socket-dark.svg";
@@ -32,7 +34,7 @@ import LogoTailwindcss from "/public/assets/images/logos/icon-tailwindcss.svg";
 import LogoTypescript from "/public/assets/images/logos/icon-typescript.svg";
 
 import LogoBigon from "public/assets/images/organizations/logo-bigon.png";
-import LogoTelus from "public/assets/images/organizations/logo-telus.svg";
+import LogoTelus from "public/assets/images/organizations/logo-telus-international.jpg";
 import LogoFork from "public/assets/images/organizations/logo-fork.png";
 import LogoRenaissance from "public/assets/images/organizations/logo-renaissance.jpg";
 import LogoSMVIT from "public/assets/images/institutes/logo-smvit.png";
@@ -108,49 +110,6 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
     url: "https://redux.js.org/"
   },
   {
-    label: "Node.js",
-    logo: LogoNodeJS,
-    url: "https://nodejs.org/"
-  },
-  {
-    label: "Express.js",
-    logo: LogoExpressJS,
-    darkModeLogo: LogoExpressJSDark,
-    url: "https://expressjs.com/"
-  },
-  // {
-  //   label: "Nest.js",
-  //   logo: LogoNest,
-  //   url: "https://nestjs.com/"
-  // },
-  // {
-  //   label: "Socket.io",
-  //   logo: LogoSocket,
-  //   darkModeLogo: LogoSocketDark,
-  //   url: "https://socket.io/"
-  // },
-  {
-    label: "PostgreSQL",
-    logo: LogoPostgreSQL,
-    url: "https://www.postgresql.org/"
-  },
-  {
-    label: "Redis",
-    logo: LogoRedis,
-    url: "https://redis.io/"
-  },
-
-  // {
-  //   label: "MongoDB",
-  //   logo: LogoMongoDB,
-  //   url: "https://www.mongodb.com/"
-  // },
-  // {
-  //   label: "Sass/Scss",
-  //   logo: LogoSass,
-  //   url: "https://sass-lang.com/"
-  // },
-  {
     label: "Tailwind CSS",
     logo: LogoTailwindcss,
     url: "https://tailwindcss.com/"
@@ -166,10 +125,74 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
     url: "https://mui.com/"
   },
   {
+    label: "Node.js",
+    logo: LogoNodeJS,
+    url: "https://nodejs.org/"
+  },
+  {
+    label: "Express.js",
+    logo: LogoExpressJS,
+    darkModeLogo: LogoExpressJSDark,
+    url: "https://expressjs.com/"
+  },
+  {
+    label: "PostgreSQL",
+    logo: LogoPostgreSQL,
+    url: "https://www.postgresql.org/"
+  },
+  {
+    label: "Redis",
+    logo: LogoRedis,
+    url: "https://redis.io/"
+  },
+  {
+    label: "Jest",
+    logo: LogoJest,
+    url: "https://jestjs.io/"
+  },
+  {
+    label: "React Testing Library",
+    logo: LogoReactTestingLibrary,
+    url: "https://testing-library.com/docs/react-testing-library/intro/"
+  },
+  {
     label: "Figma",
     logo: LogoFigma,
     url: "https://www.figma.com/"
   },
+  {
+    label: "Git",
+    logo: LogoGit,
+    url: "https://git-scm.com/"
+  },
+  {
+    label: "React PDF",
+    logo: LogoReactPDF,
+    url: "https://react-pdf.org/"
+  },
+  {
+    label: "React Email",
+    logo: LogoReactEmail,
+    darkModeLogo: LogoReactEmailDark,
+    url: "https://react.email/"
+  },
+  {
+    label: "Resend",
+    logo: LogoResend,
+    darkModeLogo: LogoResendDark,
+    url: "https://resend.com/"
+  }
+  // {
+  //   label: "Nest.js",
+  //   logo: LogoNest,
+  //   url: "https://nestjs.com/"
+  // },
+  // {
+  //   label: "Socket.io",
+  //   logo: LogoSocket,
+  //   darkModeLogo: LogoSocketDark,
+  //   url: "https://socket.io/"
+  // },
   // {
   //   label: "Cypress",
   //   logo: LogoCypress,
@@ -181,32 +204,16 @@ export const TECHNOLOGIES: TechnologyDetails[] = [
   //   logo: LogoStorybook,
   //   url: "https://storybook.js.org/"
   // },
-  {
-    label: "Git",
-    logo: LogoGit,
-    url: "https://git-scm.com/"
-  },
-  {
-    label: "React PDF",
-    logo: LogoReactPDF,
-    url: "https://react-pdf.org/"
-  },
   // {
-  //   label: "React Email",
-  //   logo: LogoReactEmail,
-  //   darkModeLogo: LogoReactEmailDark,
-  //   url: "https://react.email/"
+  //   label: "MongoDB",
+  //   logo: LogoMongoDB,
+  //   url: "https://www.mongodb.com/"
   // },
-  {
-    label: "Jest",
-    logo: LogoJest,
-    url: "https://jestjs.io/"
-  },
-  {
-    label: "React Testing Library",
-    logo: LogoReactTestingLibrary,
-    url: "https://testing-library.com/docs/react-testing-library/intro/"
-  }
+  // {
+  //   label: "Sass/Scss",
+  //   logo: LogoSass,
+  //   url: "https://sass-lang.com/"
+  // },
 ];
 
 export const EXPERIENCES: (WorkDetails | EducationDetails)[] = [
@@ -218,16 +225,16 @@ export const EXPERIENCES: (WorkDetails | EducationDetails)[] = [
     position: "Software Engineer",
     isCurrentlyWorkHere: true,
     startDate: new Date(2022, 4, 2),
-    summary: ["Working as Consulting Software Engineer for Telus."]
+    summary: ["Working as Consulting Software Engineer for Telus International."]
   },
   {
     type: "work",
-    name: "Telus",
+    name: "Telus International",
     logo: LogoTelus,
     url: "",
     position: "Software Engineer (Consultant)",
-    isCurrentlyWorkHere: true,
     startDate: new Date(2021, 6, 12),
+    endDate: new Date(2023, 8, 30),
     summary: [
       "Worked on 'CASA Spring' - Project for Telus Digital.",
       "Worked on 'Multi Benefits Claim Management (MBCM)' - Project for Telus Health.",
@@ -246,7 +253,7 @@ export const EXPERIENCES: (WorkDetails | EducationDetails)[] = [
     position: "Software Engineer",
     startDate: new Date(2021, 4, 11),
     endDate: new Date(2022, 3, 30),
-    summary: ["Worked as Consulting Software Engineer for Telus."]
+    summary: ["Worked as Consulting Software Engineer for Telus International."]
   },
   {
     type: "work",
@@ -304,13 +311,19 @@ export const PROJECTS: ProjectDetails[] = [
         label: "Tailwind CSS",
         logo: LogoTailwindcss,
         url: "https://tailwindcss.com/"
+      },
+      {
+        label: "React Email",
+        logo: LogoReactEmail,
+        darkModeLogo: LogoReactEmailDark,
+        url: "https://react.email/"
+      },
+      {
+        label: "Resend",
+        logo: LogoResend,
+        darkModeLogo: LogoResendDark,
+        url: "https://resend.com/"
       }
-      // {
-      //   label: "React Email",
-      //   logo: LogoReactEmail,
-      //   darkModeLogo: LogoReactEmailDark,
-      //   url: "https://react.email/"
-      // }
     ]
   }
 ];
@@ -347,12 +360,6 @@ export const CONTACT_DETAILS: ContactDetails[] = [
     value: "http://wa.me/918848333943?text=Hi",
     isExternalLink: true
   },
-  // {
-  //   type: "Email",
-  //   label: "contactme@iamkrishna.dev",
-  //   value: "mailto:contactme@iamkrishna.dev",
-  //   isExternalLink: false
-  // },
   {
     type: "Github",
     label: "Github",
@@ -365,10 +372,4 @@ export const CONTACT_DETAILS: ContactDetails[] = [
     value: "https://www.linkedin.com/in/iamkrishnaprasad",
     isExternalLink: true
   }
-  // {
-  //   type: "Map",
-  //   label: "Malappuram, Kerala",
-  //   value: "https://maps.app.goo.gl/7UpS5zqHLURNqXLq7",
-  //   isExternalLink: true
-  // }
 ];
