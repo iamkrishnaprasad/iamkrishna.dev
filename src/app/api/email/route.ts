@@ -65,7 +65,7 @@ export async function POST(request: Request) {
       400
     );
 
-  // uncomment these commented part after testing
+  // uncomment these commented part after testing.
   // const { valid, validators, reason } = await validate(senderEmail);
 
   // if (valid) {
