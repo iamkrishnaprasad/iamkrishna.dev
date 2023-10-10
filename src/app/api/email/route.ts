@@ -65,32 +65,32 @@ export async function POST(request: Request) {
       400
     );
 
-  const { valid, validators, reason } = await validate(senderEmail);
+  // const { valid, validators, reason } = await validate(senderEmail);
 
-  if (valid) {
-    const data: { id?: string; statusCode?: number; message?: string } = await new Resend(
-      resendEmail.apiKey
-    ).emails.send({
-      from: `Contact Form <${resendEmail.from}>`,
-      to: resendEmail.to,
-      subject: `Message from ${senderEmail}`,
-      reply_to: senderEmail,
-      react: ContactFormEmail({ message, senderEmail })
-    });
+  // if (valid) {
+  const data: { id?: string; statusCode?: number; message?: string } = await new Resend(
+    resendEmail.apiKey
+  ).emails.send({
+    from: `Contact Form <${resendEmail.from}>`,
+    to: resendEmail.to,
+    subject: `Message from ${senderEmail}`,
+    reply_to: senderEmail,
+    react: ContactFormEmail({ message, senderEmail })
+  });
 
-    if ((data?.statusCode && data?.statusCode >= 400) || data?.message) {
-      return generateResponse(data?.message, data?.statusCode);
-    } else if (data?.id) {
-      return generateResponse("Email sent successfully!", 200);
-    }
-  } else {
-    // let emailErrorReason;
-    // if (reason) {
-    //   emailErrorReason = deepCopy(validators)[reason as string].reason;
-    // }
-    return generateResponse(
-      "Email address is not valid. Please provide a valid email address.",
-      400
-    );
+  if ((data?.statusCode && data?.statusCode >= 400) || data?.message) {
+    return generateResponse(data?.message, data?.statusCode);
+  } else if (data?.id) {
+    return generateResponse("Email sent successfully!", 200);
   }
+  // } else {
+  //   // let emailErrorReason;
+  //   // if (reason) {
+  //   //   emailErrorReason = deepCopy(validators)[reason as string].reason;
+  //   // }
+  //   return generateResponse(
+  //     "Email address is not valid. Please provide a valid email address.",
+  //     400
+  //   );
+  // }
 }
