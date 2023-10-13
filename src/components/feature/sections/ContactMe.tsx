@@ -19,19 +19,23 @@ const initialState: FormData = {
   message: ""
 };
 
-const validateFormData = (data: FormData): FormData => {
+const validateFormData = (data: FormData, elementName: string = "all"): FormData => {
   let errors = {} as FormData;
 
   const requiredMessage = "This field is required.";
 
-  if (!data?.senderEmail?.trim() || data?.senderEmail?.trim() === "") {
-    errors.senderEmail = requiredMessage;
-  } else if (!isEmail(data?.senderEmail)) {
-    errors.senderEmail = "Please enter a valid email address.";
+  if (elementName === "senderEmail" || elementName === "all") {
+    if (!data?.senderEmail?.trim() || data?.senderEmail?.trim() === "") {
+      errors.senderEmail = requiredMessage;
+    } else if (!isEmail(data?.senderEmail)) {
+      errors.senderEmail = "Please enter a valid email address.";
+    }
   }
 
-  if (!data?.message?.trim() || data?.message?.trim() === "") {
-    errors.message = requiredMessage;
+  if (elementName === "message" || elementName === "all") {
+    if (!data?.message?.trim() || data?.message?.trim() === "") {
+      errors.message = requiredMessage;
+    }
   }
 
   return errors;
@@ -41,6 +45,7 @@ const ContactMeContent = () => {
   const [formData, setFormData] = useState<FormData>(initialState);
   const [errors, setErrors] = useState<FormData>(initialState);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isValidatingEmail, setIsValidatingEmail] = useState<boolean>(false);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -51,7 +56,7 @@ const ContactMeContent = () => {
 
     setIsLoading(true);
     try {
-      const response = await fetch("/api/email", {
+      const response = await fetch("/api/email/send", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -76,7 +81,49 @@ const ContactMeContent = () => {
     const { name, value } = event.target;
     const newFormData = { ...formData, [name]: value };
     setFormData(newFormData);
-    setErrors(validateFormData(newFormData));
+    setErrors(validateFormData(newFormData, name));
+  };
+
+  const handleFocus = async (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    event.preventDefault();
+    const { name } = event.target;
+    const errors = validateFormData(formData, name);
+    setErrors(errors);
+
+    if (name === "senderEmail") {
+      if (errors?.senderEmail === "" || errors?.senderEmail === undefined) {
+        setIsValidatingEmail(true);
+        try {
+          const { senderEmail } = formData;
+          const response = await fetch("/api/email/validate", {
+            method: "POST",
+            body: JSON.stringify({ senderEmail }),
+            headers: {
+              "content-type": "application/json"
+            }
+          });
+          const result = await response.json();
+          if (!result?.isValid) {
+            setErrors({
+              ...errors,
+              [name]: ["Likely typo,", "Timeout"].reduce(
+                (accumulator, currentValue) =>
+                  result?.message.startsWith(currentValue) || accumulator,
+                false
+              )
+                ? result?.message === "Timeout"
+                  ? "Timeout: Failed to validate email address, please try again later."
+                  : result?.message
+                : "Email address is not valid. Please provide a valid email address."
+            });
+          }
+        } catch (error) {
+          console.log("error: ", error);
+        } finally {
+          setIsValidatingEmail(false);
+        }
+      }
+    }
   };
 
   return (
@@ -93,17 +140,24 @@ const ContactMeContent = () => {
           </Typography>
           <form className="flex w-full flex-col gap-4" onSubmit={handleSubmit} noValidate>
             <div className="flex w-full flex-col gap-1">
-              <input
-                autoComplete="off"
-                type="email"
-                name="senderEmail"
-                id="formEmailId"
-                placeholder="Your email"
-                maxLength={320}
-                value={formData.senderEmail}
-                onChange={handleChange}
-                className="h-14 rounded-lg border border-black/10 px-4"
-              />
+              <div className="relative flex w-full flex-col gap-1">
+                {isValidatingEmail ? (
+                  <div className="absolute bottom-[18px] right-4 top-[18px] h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+                ) : null}
+                <input
+                  autoComplete="off"
+                  type="email"
+                  name="senderEmail"
+                  id="formEmailId"
+                  placeholder="Your email"
+                  maxLength={320}
+                  value={formData.senderEmail}
+                  onChange={handleChange}
+                  onBlur={handleFocus}
+                  disabled={isValidatingEmail || isLoading}
+                  className="h-14 rounded-lg border border-black/10 px-4"
+                />
+              </div>
               {errors?.senderEmail && (
                 <span className="font px-4 text-left text-sm text-red-600">
                   {errors.senderEmail}
@@ -119,6 +173,8 @@ const ContactMeContent = () => {
                 maxLength={5000}
                 value={formData.message}
                 onChange={handleChange}
+                onBlur={handleFocus}
+                disabled={isLoading}
                 className="h-52 rounded-lg border border-black/10 p-4 md:h-80"
               />
               {errors?.message && (
@@ -126,7 +182,14 @@ const ContactMeContent = () => {
               )}
             </div>
             <div className="flex justify-center md:justify-end ">
-              <SubmitBtn pending={isLoading} />
+              <SubmitBtn
+                disabled={
+                  isValidatingEmail ||
+                  isLoading ||
+                  (formData?.senderEmail?.length === 0 && formData?.message?.length === 0)
+                }
+                pending={isLoading}
+              />
             </div>
           </form>
           <hr className="" />
