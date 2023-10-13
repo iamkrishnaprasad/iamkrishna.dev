@@ -32,12 +32,6 @@ const AboutMeContent = () => {
           </div>
         </div>
         <div className="flex h-auto w-full flex-col items-start p-4 md:h-full md:w-2/3 md:p-16">
-          {/* <Typography variant="body1">
-            I am a full-stack developer offering {yearOfExperiences} of experience
-            providing high-impact web solutions for diverse industry organizations. Skilled in
-            designing, developing and testing multiple web-based applications incorporating a range
-            of technologies.
-          </Typography> */}
           <Typography variant="body1">
             Welcome to my portfolio website! I&#39;m {name}, a seasoned full-stack developer with{" "}
             {yearOfExperiences} years of experience in crafting digital solutions that bring ideas
@@ -60,13 +54,6 @@ const AboutMeContent = () => {
             expectations.
           </Typography>
           <br />
-          {/* <Typography variant="body1">
-            With {yearOfExperiences} years of experience, I&#39;ve had the privilege of working with
-            diverse teams on projects ranging from e-commerce platforms to content management
-            systems. My adaptability and problem-solving mindset have enabled me to tackle complex
-            challenges head-on and find innovative solutions.
-          </Typography>
-          <br /> */}
           <Typography variant="body1">
             As you explore my portfolio, you&#39;ll find a collection of projects that showcase my
             skills and creativity. From responsive web designs to interactive web applications, each
@@ -74,13 +61,6 @@ const AboutMeContent = () => {
             with you, and I hope it inspires you as much as it has inspired me.
           </Typography>
           <br />
-          {/* <Typography variant="body1">
-            If you have a project in mind or if you&#39;d like to connect and discuss how we can
-            work together to bring your ideas to fruition, please don&#39;t hesitate to reach out.
-            With {yearOfExperiences} years of experience under my belt, I&#39;m always up for new
-            challenges and opportunities to collaborate.
-          </Typography>
-          <br /> */}
           <Typography variant="body1">
             Thank you for visiting my portfolio, and I look forward to connecting with you!
           </Typography>
