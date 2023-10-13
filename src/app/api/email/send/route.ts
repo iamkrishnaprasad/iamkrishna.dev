@@ -1,6 +1,5 @@
 import ContactFormEmail from "@/emails/contact-form-email";
-import { deepCopy, isEmail } from "@/utils";
-import validate from "deep-email-validator";
+import { isEmail } from "@/utils";
 import { Resend } from "resend";
 
 const resendEmail: {

@@ -11,14 +11,12 @@ const generateKeyString = (key) => {
 
 const get = async (key) => {
   const data = await kv.get(generateKeyString(key));
-  console.log("get: ", data);
   if (data === null) return null;
   return deepCopy(data);
 };
 
 const set = async (key, fetcher, expiresIn = "15m") => {
   const data = await fetcher();
-  console.log("set: ", data);
   await kv.set(generateKeyString(key), JSON.stringify(data), {
     ex: getSeconds(expiresIn),
     nx: true
@@ -28,7 +26,6 @@ const set = async (key, fetcher, expiresIn = "15m") => {
 
 const fetchFromRedis = async (key, fetcher, expiresIn) => {
   const data = await get(key);
-  console.log("fetch: ", data);
   if (data !== null) return data;
   return set(key, fetcher, expiresIn);
 };
