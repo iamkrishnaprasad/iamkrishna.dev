@@ -142,7 +142,7 @@ const ContactMeContent = () => {
             <div className="flex w-full flex-col gap-1">
               <div className="relative flex w-full flex-col gap-1">
                 {isValidatingEmail ? (
-                  <div className="absolute bottom-[18px] right-4 top-[18px] h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+                  <div className="absolute bottom-[18px] right-4 top-[18px] h-5 w-5 animate-spin rounded-full border-b-2 border-black dark:border-white"></div>
                 ) : null}
                 <input
                   autoComplete="off"
