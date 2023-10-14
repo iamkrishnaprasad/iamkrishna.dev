@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/api/email/validate/route.js"
+    "src/app/api/email/validate/route.js",
+    "src/utils/fetch.js"
   ],
   "exclude": ["node_modules"]
 }
