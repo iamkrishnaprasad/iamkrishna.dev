@@ -151,7 +151,7 @@ const ContactMeContent = () => {
                   id="formEmailId"
                   placeholder="Your email"
                   maxLength={320}
-                  value={formData.senderEmail}
+                  value={formData?.senderEmail}
                   onChange={handleChange}
                   onBlur={handleFocus}
                   disabled={isValidatingEmail || isLoading}
