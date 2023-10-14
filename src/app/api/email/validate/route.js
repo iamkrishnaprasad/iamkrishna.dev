@@ -83,7 +83,7 @@ export async function POST(request) {
             };
           }
         },
-        "15m"
+        "5m"
       );
     }
   } catch (error) {

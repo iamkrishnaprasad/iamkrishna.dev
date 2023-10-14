@@ -8,6 +8,7 @@ import SubmitBtn from "../submitBtn/submit-btn";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { isEmail } from "@/utils";
+import { fetchWithTimeout } from "@/utils/fetch";
 
 type FormData = {
   senderEmail: string;
@@ -95,12 +96,13 @@ const ContactMeContent = () => {
         setIsValidatingEmail(true);
         try {
           const { senderEmail } = formData;
-          const response = await fetch("/api/email/validate", {
+          const response = await fetchWithTimeout("/api/email/validate", {
             method: "POST",
             body: JSON.stringify({ senderEmail }),
             headers: {
               "content-type": "application/json"
-            }
+            },
+            timeout: 5000
           });
           const result = await response.json();
           if (!result?.isValid) {
@@ -117,8 +119,15 @@ const ContactMeContent = () => {
                 : "Email address is not valid. Please provide a valid email address."
             });
           }
-        } catch (error) {
-          console.log("error: ", error);
+        } catch (error: any) {
+          if (error?.name === "AbortError") {
+            setErrors({
+              ...errors,
+              [name]: "Timeout: Failed to validate email address, please try again later."
+            });
+          } else {
+            console.log("error: ", error);
+          }
         } finally {
           setIsValidatingEmail(false);
         }
