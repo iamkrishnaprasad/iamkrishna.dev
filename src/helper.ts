@@ -350,14 +350,14 @@ export const renderIcon = (type: string, size: number = 36) => {
 export const CONTACT_DETAILS: ContactDetails[] = [
   {
     type: "Call",
-    label: "+91 8848 333 943",
-    value: "tel:+918848333943",
+    label: "+91 8553 818 842",
+    value: "tel:+918553818842",
     isExternalLink: false
   },
   {
     type: "WhatsApp",
-    label: "+91 8848 333 943",
-    value: "http://wa.me/918848333943?text=Hi",
+    label: "+91 8553 818 842",
+    value: "http://wa.me/918553818842?text=Hi",
     isExternalLink: true
   },
   {
