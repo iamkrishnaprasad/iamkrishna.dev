@@ -142,8 +142,8 @@ const ContactMeContent = () => {
         <div className="flex h-full w-full flex-col justify-evenly gap-4 rounded-lg bg-[#ffffff] p-4 text-center dark:bg-[#121212] md:w-3/4 md:p-16">
           <Typography variant="body2" className="text-lg md:text-xl ">
             Please contact me directly at{" "}
-            <a className="underline" href="mailto:contactme@iamkrishna.dev">
-              contactme@iamkrishna.dev
+            <a className="underline" href="mailto:krishnaprasad1991@gmail.com">
+              krishnaprasad1991@gmail.com
             </a>{" "}
             or through this form.
           </Typography>
