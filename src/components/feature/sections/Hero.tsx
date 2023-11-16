@@ -20,7 +20,11 @@ const HeroContent = () => {
             Fullstack Developer
           </Typography>
           <div className="flex flex-col gap-4 md:flex-row">
-            <LinkButton url="/files/krishnaprasad-m_cv.pdf" target="_blank" label="Download CV" />
+            <LinkButton
+              url="/files/krishnaprasad-m_resume.pdf"
+              target="_blank"
+              label="Download Resume"
+            />
             <LinkButton url="#contactMe" target="_self" label="Contact Me" />
           </div>
         </div>
